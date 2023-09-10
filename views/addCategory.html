@@ -45,11 +45,11 @@
                             <!-- Contains the body of a card and is centered within its parent container.-->
                             <div class="card-body text-center">
                                 <!-- Form for adding category information -->
-                                <form action="/category/33207798/add-category-post" method="POST" onsubmit="return validateForm()">
+                                <form action="/api/v1/category/33207798/add-category" method="POST">
                                     <div class="mb-3">
                                         <label for="Name" class="form-label">Category Name</label>
                                         <input type="text" name="Name" class="form-control" id="Name" placeholder="Enter category name" required/>
-                                        <p id="errorText" style="color: red;"></p>
+
                                     </div>
                                 
                                     <div class="mb-3">
@@ -66,23 +66,6 @@
                                     <button class="btn btn-primary">Submit</button>
                                 </form>
                                 
-                                <script>
-                                
-                                //Check whether contain non alphanumeric symbol
-                                function validateForm() {
-                                    const inputElement = document.getElementById("Name");
-                                    const inputValue = inputElement.value;
-                                    const aplhanumericExpression = /^[a-zA-Z0-9]*$/; // Regular expression to match alphanumeric characters
-                                
-                                    if (!aplhanumericExpression.test(inputValue)) {
-                                        const errorText = document.getElementById("errorText");
-                                        errorText.textContent = "Input is not alphanumeric";
-                                        return false; // Prevent form submission
-                                    }
-                                
-                                    return true; // Allow form submission
-                                }
-                                </script>
                                 
                             </div>
                         </div>
